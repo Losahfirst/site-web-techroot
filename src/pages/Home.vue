@@ -1230,9 +1230,7 @@ section {
   }
   
   .hero-subtitle {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    display: none;
   }
   
   .hero-badge {
@@ -1243,7 +1241,7 @@ section {
   
   .hero-actions {
     gap: 0.75rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .hero-actions .btn {
@@ -1252,21 +1250,7 @@ section {
   }
   
   .hero-stats {
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-  
-  .stat {
-    flex: 1 1 40%;
-    padding: 0.5rem;
-  }
-  
-  .stat-number {
-    font-size: 1.5rem;
-  }
-  
-  .stat-label {
-    font-size: 0.65rem;
+    display: none;
   }
   
   .hero-scroll {
