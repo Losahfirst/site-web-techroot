@@ -330,9 +330,12 @@ const sectors = ref([
     grid-template-columns: 1fr;
     text-align: center;
   }
+  .hero-image-v2 { 
+    height: 400px; 
+    order: -1;
+  }
   .hero-lead { margin-inline: auto; }
   .hero-actions-v2 { justify-content: center; }
-  .hero-image-v2 { height: 400px; }
 }
 
 @media (max-width: 768px) {

@@ -830,6 +830,10 @@ const closeModal = () => {
     gap: 3rem;
   }
   
+  .hero-image-v2 {
+    order: -1;
+  }
+  
   .hero-lead {
     margin-left: auto;
     margin-right: auto;
@@ -876,6 +880,10 @@ const closeModal = () => {
     width: 150%;
     left: -25%;
     opacity: 0.05;
+  }
+
+  .hero-capabilities {
+    display: none;
   }
 }
 
