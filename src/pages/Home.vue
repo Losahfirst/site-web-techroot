@@ -1617,7 +1617,7 @@ section {
     justify-content: center;
   }
   
-  .hero-stats {
+  .hero-stats-compact {
     display: none;
   }
   
@@ -1759,6 +1759,21 @@ section {
   }
   
   .cta-content p {
+    font-size: 0.9rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .cta-actions .btn-primary-v2,
+  .cta-actions .btn-secondary-v2 {
+    width: 90%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 0.85rem 1.25rem;
     font-size: 0.9rem;
   }
   
@@ -1940,11 +1955,14 @@ section {
   
   .cta-actions {
     flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
   }
   
-  .cta-actions .btn {
-    width: 100%;
+  .cta-actions .btn-primary-v2,
+  .cta-actions .btn-secondary-v2 {
+    width: 90%;
+    max-width: 280px;
     justify-content: center;
   }
   
