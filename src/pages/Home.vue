@@ -1686,6 +1686,16 @@ section {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
+
+  .poles-grid .pole-card {
+    grid-column: span 1 !important;
+  }
+
+  .poles-grid .pole-card:nth-child(5) {
+    grid-column: 1 / span 2 !important;
+    width: calc(50% - 0.375rem);
+    margin-inline: auto;
+  }
   
   .pole-card {
     min-height: 160px;
@@ -1903,6 +1913,16 @@ section {
   .poles-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
+  }
+
+  .poles-grid .pole-card {
+    grid-column: span 1 !important;
+  }
+
+  .poles-grid .pole-card:nth-child(5) {
+    grid-column: 1 / span 2 !important;
+    width: calc(50% - 0.25rem);
+    margin-inline: auto;
   }
   
   .pole-card {
