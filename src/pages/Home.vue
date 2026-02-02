@@ -10,7 +10,7 @@
         <div class="hero-badge">
           Groupe Technologique Africain de Référence
         </div>
-        <h1>Solutions <span class="gradient-text">Technologiques</span> Innovantes pour l'Afrique</h1>
+        <h1>Solutions <span class="gradient-text">Technologiques</span> <br class="mobile-break"/><span class="hero-line2">Innovantes pour l'Afrique</span></h1>
         <p class="hero-subtitle">
           TechRoot conçoit des solutions Hardware, Software, IoT et Drones adaptées aux réalités africaines. 
           Nous transformons les défis locaux en opportunités d'innovation.
@@ -56,7 +56,7 @@
           <p>Une gamme complète de services technologiques pour propulser votre entreprise vers l'excellence digitale.</p>
         </div>
         <div class="services-grid">
-          <div class="service-card" v-for="(service, index) in services" :key="index">
+          <div class="service-card" :class="{ 'hide-mobile': service.hideOnMobile }" v-for="(service, index) in services" :key="index">
             <div class="service-icon">
               <span class="material-symbols-outlined">{{ service.icon }}</span>
             </div>
@@ -194,6 +194,12 @@
             </div>
           </div>
         </div>
+        <!-- Version mobile scrollable -->
+        <div class="partners-mobile">
+          <div class="partner" v-for="partner in partners" :key="'mobile-' + partner.id">
+            <img :src="partner.logo" :alt="partner.name" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -311,7 +317,8 @@ const services = ref([
     icon: 'security',
     title: 'Cybersécurité',
     description: 'Audit de sécurité, protection des données et conformité RGPD.',
-    link: '/poles/software'
+    link: '/poles/software',
+    hideOnMobile: true
   },
   {
     icon: 'flight_takeoff',
@@ -323,7 +330,8 @@ const services = ref([
     icon: 'school',
     title: 'Formation & Conseil',
     description: 'Programmes de formation et accompagnement stratégique en transformation digitale.',
-    link: '/a-propos'
+    link: '/a-propos',
+    hideOnMobile: true
   }
 ])
 
@@ -476,6 +484,10 @@ const closeModal = () => {
   line-height: 1.1;
   color: white;
   margin-bottom: 1.5rem;
+}
+
+.hero h1 .mobile-break {
+  display: none;
 }
 
 .gradient-text {
@@ -1065,6 +1077,10 @@ section {
   mask-image: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
 }
 
+.partners-mobile {
+  display: none;
+}
+
 .partners-track {
   display: flex;
   align-items: center;
@@ -1224,29 +1240,42 @@ section {
   }
   
   .hero-content h1 {
-    font-size: 1.5rem;
-    line-height: 1.2;
+    font-size: 1.4rem;
+    line-height: 1.3;
     margin-bottom: 1rem;
+  }
+  
+  .hero-content h1 .mobile-break {
+    display: block;
   }
   
   .hero-subtitle {
-    display: none;
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    opacity: 0.85;
   }
   
   .hero-badge {
-    font-size: 0.7rem;
-    padding: 0.35rem 0.75rem;
-    margin-bottom: 1rem;
+    display: none;
   }
   
   .hero-actions {
     gap: 0.75rem;
     margin-bottom: 1.5rem;
+    flex-direction: row !important;
+    justify-content: center;
+    flex-wrap: nowrap;
   }
   
   .hero-actions .btn {
-    padding: 0.65rem 1.25rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.75rem !important;
+    width: auto !important;
+    min-width: auto !important;
+    max-width: 140px;
+    flex: 0 0 auto;
   }
   
   .hero-stats {
@@ -1255,6 +1284,15 @@ section {
   
   .hero-scroll {
     display: none;
+  }
+  
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .section-badge,
+  .hero-badge {
+    display: none !important;
   }
   
   .section-header {
@@ -1377,6 +1415,37 @@ section {
   
   .img-main img {
     height: 250px;
+  }
+  
+  /* Partners mobile - scrollable */
+  .partners-slider {
+    display: none;
+  }
+  
+  .partners-mobile {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem 0;
+    scrollbar-width: none;
+  }
+  
+  .partners-mobile::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .partners-mobile .partner {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    min-width: 140px;
+    padding: 1rem;
+  }
+  
+  .partners-mobile .partner img {
+    height: 60px;
+    max-width: 120px;
   }
 }
 
