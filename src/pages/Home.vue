@@ -1,50 +1,84 @@
 <template>
   <div class="home">
     <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1280&q=70&auto=format" alt="Transformation digitale en Afrique" loading="eager" />
-        <div class="hero-overlay"></div>
+    <section class="hero-v2">
+      <div class="hero-bg-shapes">
+        <div class="hero-grid-pattern"></div>
+        <div class="africa-silhouette-v2"></div>
+        <div class="orange-dot-focus"></div>
+        <div class="dot-green"></div>
+        <div class="dot-blue"></div>
       </div>
-      <div class="hero-content">
-        <div class="hero-badge">
-          Groupe Technologique Africain de Référence
+      
+      <div class="container hero-container">
+        <div class="hero-content-v2">
+
+          <h1>
+            L’Afrique <span class="serif-text">invente</span> <br/>
+            son <span class="highlight">futur</span>
+          </h1>
+          <p class="hero-lead">
+            <strong>TechRoot</strong> conçoit des solutions Hardware, Software, IoT et Drones adaptées aux réalités africaines. 
+            Nous transformons les défis locaux en opportunités d'innovation.
+          </p>
+          
+          <div class="hero-stats-compact">
+            <div class="stat-row">
+              <span class="material-symbols-outlined stat-icon">hub</span>
+              <span class="stat-val">5+</span>
+              <span class="stat-sep">/</span>
+              <span class="stat-txt">Pôles d'Expertise</span>
+            </div>
+            <div class="stat-row">
+              <span class="material-symbols-outlined stat-icon">task_alt</span>
+              <span class="stat-val">150+</span>
+              <span class="stat-sep">/</span>
+              <span class="stat-txt">Projets Impactants</span>
+            </div>
+          </div>
+          <div class="hero-actions-v2">
+            <router-link to="/contact" class="btn-primary-v2">
+              Démarrer un Projet
+              <span class="material-symbols-outlined">north_east</span>
+            </router-link>
+            <router-link to="/projets" class="btn-secondary-v2">
+              Nos Réalisations
+            </router-link>
+          </div>
+          
+          <div class="hero-capabilities">
+            <p class="cap-title">Expertise Systémique & Industrielle</p>
+            <div class="cap-grid">
+              <div class="cap-item">
+                <span class="material-symbols-outlined">developer_board</span>
+                <div class="cap-info">
+                  <strong>HARDWARE</strong>
+                  <small>Électronique & IoT</small>
+                </div>
+              </div>
+              <div class="cap-item">
+                <span class="material-symbols-outlined">code</span>
+                <div class="cap-info">
+                  <strong>SOFTWARE</strong>
+                  <small>Plateformes & App</small>
+                </div>
+              </div>
+              <div class="cap-item">
+                <span class="material-symbols-outlined">flight_takeoff</span>
+                <div class="cap-info">
+                  <strong>DRONES</strong>
+                  <small>Aérien & Data</small>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h1>Solutions <span class="gradient-text">Technologiques</span> <br class="mobile-break"/><span class="hero-line2">Innovantes pour l'Afrique</span></h1>
-        <p class="hero-subtitle">
-          TechRoot conçoit des solutions Hardware, Software, IoT et Drones adaptées aux réalités africaines. 
-          Nous transformons les défis locaux en opportunités d'innovation.
-        </p>
-        <div class="hero-actions">
-          <router-link to="/contact" class="btn btn-primary">
-            Démarrer un Projet
-          </router-link>
-          <router-link to="/projets" class="btn btn-outline">
-            Nos Réalisations
-          </router-link>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-number">5</span>
-            <span class="stat-label">Pôles d'Expertise</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">12+</span>
-            <span class="stat-label">Projets en Cours</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">6</span>
-            <span class="stat-label">Partenaires Clés</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">3</span>
-            <span class="stat-label">Pays d'Impact</span>
-          </div>
+
+        <div class="hero-image-v2">
+          <div class="image-continuous"></div>
         </div>
       </div>
-      <div class="hero-scroll">
-        <span class="material-symbols-outlined">expand_more</span>
-      </div>
+
     </section>
 
     <!-- Services Section -->
@@ -110,7 +144,7 @@
                 </div>
               </div>
             </div>
-            <router-link to="/a-propos" class="btn btn-primary">
+            <router-link to="/a-propos" class="btn-primary-v2">
               Découvrir Notre Histoire
               <span class="material-symbols-outlined">arrow_forward</span>
             </router-link>
@@ -168,7 +202,7 @@
           </div>
         </div>
         <div class="projects-cta">
-          <router-link to="/projets" class="btn btn-primary">
+          <router-link to="/projets" class="btn-primary-v2">
             Voir Tous Nos Projets
             <span class="material-symbols-outlined">arrow_forward</span>
           </router-link>
@@ -214,11 +248,11 @@
           <h2>Prêt à <span class="gradient-text">Transformer</span> Votre Entreprise ?</h2>
           <p>Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nous pouvons vous accompagner.</p>
           <div class="cta-actions">
-            <router-link to="/contact" class="btn btn-primary btn-large">
+            <router-link to="/contact" class="btn-primary-v2">
               <span class="material-symbols-outlined">mail</span>
               Contactez-Nous
             </router-link>
-            <a href="tel:+2250787180456" class="btn btn-secondary btn-large">
+            <a href="tel:+2250787180456" class="btn-secondary-v2">
               <span class="material-symbols-outlined">call</span>
               +225 07 87 18 04 56
             </a>
@@ -424,190 +458,467 @@ const closeModal = () => {
 </script>
 
 <style scoped>
-/* Hero Section */
-.hero {
+/* Hero Section V2 */
+.hero-v2 {
   position: relative;
   min-height: 100vh;
+  background-color: #f0f7f4; /* Light mint background matching the image */
+  padding-top: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
-.hero-bg {
+.hero-bg-shapes {
   position: absolute;
   inset: 0;
+  pointer-events: none;
+}
+
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#064e3b 1.5px, transparent 1.5px);
+  background-size: 60px 60px;
+  opacity: 0.04;
+}
+
+.africa-silhouette-v2 {
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  width: 90%;
+  height: 90%;
+  background-image: url('https://africadigitalalliance.com/wp-content/uploads/2023/04/Africa-Map-Big@3x.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.07;
+  filter: sepia(1) saturate(0.5) brightness(1.2); /* Creates that nude/beige effect */
+  pointer-events: none;
   z-index: 0;
 }
 
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
+.orange-dot-focus {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(5, 30, 25, 0.97) 0%, rgba(8, 20, 35, 0.95) 100%);
+  top: 25%;
+  left: 3%;
+  width: 24px;
+  height: 24px;
+  background: #f97316;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
 }
 
-.hero-content {
-  position: relative;
+.orange-pill-right {
+  position: absolute;
+  top: 40%;
+  right: -50px;
+  width: 100px;
+  height: 200px;
+  background: #f97316;
+  border-radius: 100px 0 0 100px;
+  opacity: 0.8;
+}
+
+.hero-line-connector {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.1), transparent, rgba(16, 185, 129, 0.1));
   z-index: 1;
-  text-align: center;
-  max-width: 900px;
-  padding: 2rem;
 }
 
-.hero-badge {
+
+.section-number {
+  position: absolute;
+  top: 20%;
+  left: 2rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10rem;
+  font-weight: 900;
+  color: #064e3b;
+  opacity: 0.03;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.floating-label {
+  position: absolute;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #0d9668;
+  opacity: 0.3;
+  padding: 0.5rem 1rem;
+  border-left: 2px solid currentColor;
+}
+
+.label-1 { top: 15%; right: 10%; }
+.label-2 { bottom: 20%; left: 5%; transform: rotate(-90deg); transform-origin: left; }
+
+.dot-green, .dot-blue {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-green { top: 30%; right: 40%; background: #10b981; animation: float 4s infinite ease-in-out; }
+.dot-blue { bottom: 35%; left: 45%; background: #0891b2; animation: float 6s infinite ease-in-out; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge-v2 {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(13, 150, 104, 0.15);
-  border: 1px solid rgba(13, 150, 104, 0.25);
-  padding: 0.5rem 1.25rem;
+  gap: 0.75rem;
+  background: #fff;
+  padding: 0.6rem 1.25rem;
   border-radius: 50px;
-  font-size: 0.875rem;
-  color: #a7f3d0;
-  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e293b;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
 }
 
-.hero-badge .material-symbols-outlined {
-  font-size: 1.125rem;
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #0d9668;
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(13, 150, 104, 0.4);
+  animation: pulse 2s infinite;
 }
 
-.hero h1 {
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(13, 150, 104, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(13, 150, 104, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(13, 150, 104, 0); }
+}
+
+.hero-v2 h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
-  line-height: 1.1;
-  color: white;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #111827; /* Deep Charcoal for better impact */
   margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.02);
 }
 
-.hero h1 .mobile-break {
-  display: none;
+.serif-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #064e3b; /* Very dark green for subtle contrast */
+  margin-right: 0.2em;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #0d9668, #0891b2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.highlight {
+  color: #10b981; /* Vibrant Emerald Green */
+  position: relative;
+  font-weight: 800;
 }
 
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: #94a3b8;
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 0 auto 2.5rem;
+.hero-lead {
+  font-size: 1.35rem;
+  color: #374151; /* Slate grey for readability */
+  line-height: 1.4;
+  max-width: 500px;
+  margin-bottom: 2rem; /* Reduced for stats */
+  font-weight: 500;
 }
 
-.hero-actions {
+.hero-stats-compact {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
   margin-bottom: 3rem;
 }
 
-.btn {
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.stat-icon {
+  color: #10b981;
+  font-size: 1.25rem;
+  opacity: 0.6;
+}
+
+.stat-sep {
+  color: #10b981;
+  font-weight: 900;
+}
+
+.stat-txt {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-actions-v2 {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.btn-primary-v2 {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1rem;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: #111827; /* Dark charcoal/black for premium feel */
+  color: white;
+  border-radius: 100px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-primary-v2:hover {
+  background: #059669; /* Emerald on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(5, 150, 105, 0.2);
+}
+
+.btn-secondary-v2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: rgba(255,255,255,0.8);
+  color: #1e293b;
+  border-radius: 100px;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-primary {
-  background: #0d9668;
-  color: white;
-  box-shadow: 0 2px 8px rgba(13, 150, 104, 0.25);
-}
-
-.btn-primary:hover {
-  background: #0b8459;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(13, 150, 104, 0.3);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(13, 150, 104, 0.2);
   backdrop-filter: blur(10px);
 }
 
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(-1px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #e2e8f0;
-  border: 1px solid rgba(13, 150, 104, 0.6);
-}
-
-.btn-outline:hover {
-  background: rgba(13, 150, 104, 0.15);
+.btn-secondary-v2:hover {
+  background: #ffffff;
+  color: #0d9668;
   border-color: #0d9668;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
-.btn-large {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-}
-
-.hero-stats {
+.hero-capabilities {
   display: flex;
-  gap: 3rem;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.cap-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #059669;
+  font-weight: 700;
+}
+
+.cap-grid {
+  display: flex;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
-.stat {
-  text-align: center;
+.cap-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #111827;
 }
 
-.stat-number {
-  display: block;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: white;
+.cap-item .material-symbols-outlined {
+  font-size: 1.75rem;
+  color: #10b981;
+  opacity: 0.8;
 }
 
-.stat-label {
-  font-size: 0.875rem;
-  color: #94a3b8;
+.cap-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
 }
 
-.hero-scroll {
+.cap-info strong {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #111827;
+}
+
+.cap-info small {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Sliced Image Section V2 (Continuous Image + Mask) */
+.hero-image-v2 {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-continuous {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://c76c7bbc41.mjedge.net/wp-content/uploads/tc/2022/02/Solving-Africa-tech-talent.png');
+  background-size: cover;
+  background-position: bottom center; /* Focus on the characters */
+  
+  /* Mask logic: 4 capsules defined in an SVG data URI */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg transform='rotate(-25 300 300)'%3E%3Crect x='30' y='50' width='100' height='500' rx='50' fill='black' /%3E%3Crect x='175' y='20' width='100' height='560' rx='50' fill='black' /%3E%3Crect x='320' y='80' width='100' height='520' rx='50' fill='black' /%3E%3Crect x='465' y='180' width='100' height='380' rx='50' fill='black' /%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg transform='rotate(-25 300 300)'%3E%3Crect x='30' y='50' width='100' height='500' rx='50' fill='black' /%3E%3Crect x='175' y='20' width='100' height='560' rx='50' fill='black' /%3E%3Crect x='320' y='80' width='100' height='520' rx='50' fill='black' /%3E%3Crect x='465' y='180' width='100' height='380' rx='50' fill='black' /%3E%3C/g%3E%3C/svg%3E");
+  
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  filter: saturate(1.2) contrast(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero-v2 {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    height: auto;
+    min-height: auto;
+  }
+  
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-actions-v2 {
+    justify-content: center;
+  }
+  
+  .hero-stats-compact {
+    align-items: center;
+  }
+  
+  .hero-capabilities {
+    align-items: center;
+  }
+
+  .cap-grid {
+    justify-content: center;
+  }
+  
+  .hero-image-v2 {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image-v2 {
+    display: flex; /* Keep image visible */
+    height: 380px;
+    margin-top: 2rem;
+  }
+  
+  .hero-v2 {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .orange-pill-right, .hero-corner, .hero-line-connector {
+    display: none;
+  }
+
+  .africa-silhouette-v2 {
+    width: 150%;
+    left: -25%;
+    opacity: 0.05;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-v2 h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-lead {
+    font-size: 1.1rem;
+  }
+
+  .cap-grid {
+    gap: 1.5rem;
+  }
+}
+
+.hero-scroll-v2 {
   position: absolute;
   bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 2s infinite;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
-.hero-scroll .material-symbols-outlined {
-  font-size: 2rem;
-  color: #10b981;
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, #0d9668, transparent);
+  animation: scrollDown 2s infinite;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(10px); }
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
 /* Sections Common */
@@ -660,9 +971,24 @@ section {
 
 /* Services Section */
 .services {
-  background-color: #f8fafc;
-  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-  background-size: 24px 24px;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/bg-dots-africa.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
 }
 
 .services-grid {
@@ -845,26 +1171,34 @@ section {
 
 /* Poles Section */
 .poles-section {
-  background-color: #f8fafc;
-  background-image: 
-    linear-gradient(rgba(13, 150, 104, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(13, 150, 104, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
   position: relative;
+  background-color: #f0f7f4; /* Same mint background as hero */
+  overflow: hidden;
 }
 
 .poles-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('https://media.istockphoto.com/id/1161828321/vector/blue-world-map-on-white-background.jpg?s=612x612&w=0&k=20&c=5j5GP-EgA_dRfvPrHvfAuWSsrg0bMyptZvNiA25xKls=');
+  inset: 0;
+  background-image: radial-gradient(#064e3b 1.5px, transparent 1.5px);
+  background-size: 60px 60px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.poles-section::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  width: 60%;
+  height: 100%;
+  background-image: url('https://africadigitalalliance.com/wp-content/uploads/2023/04/Africa-Map-Big@3x.png');
   background-size: contain;
-  background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.1;
+  opacity: 0.06;
+  filter: sepia(1) saturate(0.5) brightness(1.2);
+  transform: translateY(-50%) rotate(15deg);
   pointer-events: none;
 }
 
@@ -1261,21 +1595,18 @@ section {
     display: none;
   }
   
-  .hero-actions {
-    gap: 0.75rem;
+  .hero-actions-v2 {
+    gap: 1rem;
     margin-bottom: 1.5rem;
-    flex-direction: row !important;
-    justify-content: center;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
   }
   
-  .hero-actions .btn {
-    padding: 0.5rem 1rem !important;
-    font-size: 0.75rem !important;
-    width: auto !important;
-    min-width: auto !important;
-    max-width: 140px;
-    flex: 0 0 auto;
+  .hero-actions-v2 .btn-primary-v2,
+  .hero-actions-v2 .btn-secondary-v2 {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+    justify-content: center;
   }
   
   .hero-stats {
@@ -1484,18 +1815,15 @@ section {
     margin-bottom: 1.25rem;
   }
   
-  .hero-actions {
+  .hero-actions-v2 {
     flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
   
-  .hero-actions .btn {
+  .hero-actions-v2 .btn-primary-v2,
+  .hero-actions-v2 .btn-secondary-v2 {
     width: 100%;
-    justify-content: center;
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
   }
   
   .hero-stats {

@@ -3,77 +3,65 @@
     <!-- Mobile Overlay - Outside navbar for proper stacking -->
     <div class="mobile-overlay" :class="{ 'overlay-open': mobileMenuOpen }" @click="closeMenus"></div>
     
-    <!-- Mobile Sidebar - Outside navbar for proper stacking -->
+    <!-- Mobile Sidebar -->
     <nav class="mobile-sidebar" :class="{ 'sidebar-open': mobileMenuOpen }">
       <div class="mobile-nav-header">
         <router-link to="/" class="mobile-logo" @click="closeMenus">
           <img src="/assets/images/logo.png" alt="TechRoot Group">
+          <span class="mobile-logo-text">TechRoot</span>
         </router-link>
         <button class="mobile-close" @click="closeMenus">
           <span class="material-symbols-outlined">close</span>
         </button>
       </div>
       
-      <div class="mobile-nav-links">
-        <router-link to="/" class="mobile-link" @click="closeMenus">
-          <span class="material-symbols-outlined">home</span>
-          Accueil
-        </router-link>
-        
-        <div class="mobile-dropdown">
-          <a href="#" class="mobile-link" @click.prevent="toggleDropdown">
-            <span class="material-symbols-outlined">widgets</span>
-            Nos Pôles
-            <span class="material-symbols-outlined dropdown-arrow" :class="{ 'arrow-open': dropdownOpen }">expand_more</span>
-          </a>
-          <div class="mobile-dropdown-menu" :class="{ 'dropdown-open': dropdownOpen }">
-            <router-link to="/poles/hardware" class="mobile-dropdown-item" @click="closeMenus">
-              <span class="material-symbols-outlined">developer_board</span>
-              Pôle Hardware
-            </router-link>
-            <router-link to="/poles/software" class="mobile-dropdown-item" @click="closeMenus">
-              <span class="material-symbols-outlined">code</span>
-              Pôle Software
-            </router-link>
-            <router-link to="/poles/drones" class="mobile-dropdown-item" @click="closeMenus">
-              <span class="material-symbols-outlined">flight_takeoff</span>
-              Pôle Drones
-            </router-link>
-            <router-link to="/poles/events" class="mobile-dropdown-item" @click="closeMenus">
-              <span class="material-symbols-outlined">celebration</span>
-              Pôle Events
-            </router-link>
-            <router-link to="/poles/recherche" class="mobile-dropdown-item" @click="closeMenus">
-              <span class="material-symbols-outlined">science</span>
-              Recherche & R&D
+      <div class="mobile-nav-body">
+        <div class="mobile-nav-links">
+          <router-link to="/" class="mobile-link" @click="closeMenus">
+            <div class="link-icon"><span class="material-symbols-outlined">home</span></div>
+            Acceuil
+          </router-link>
+          
+          <div class="mobile-dropdown-v2">
+            <button class="mobile-link" @click="toggleDropdown">
+              <div class="link-icon"><span class="material-symbols-outlined">explore</span></div>
+              Nos Pôles
+              <span class="material-symbols-outlined arrow" :class="{ 'rotate': dropdownOpen }">expand_more</span>
+            </button>
+            <div class="mobile-sub-menu" :class="{ 'show': dropdownOpen }">
+              <router-link to="/poles/hardware" class="sub-link" @click="closeMenus">Pôle Hardware</router-link>
+              <router-link to="/poles/software" class="sub-link" @click="closeMenus">Pôle Software</router-link>
+              <router-link to="/poles/drones" class="sub-link" @click="closeMenus">Pôle Drones</router-link>
+              <router-link to="/poles/events" class="sub-link" @click="closeMenus">Pôle Events</router-link>
+              <router-link to="/poles/recherche" class="sub-link" @click="closeMenus">Recherche & R&D</router-link>
+            </div>
+          </div>
+          
+          <router-link to="/a-propos" class="mobile-link" @click="closeMenus">
+            <div class="link-icon"><span class="material-symbols-outlined">groups</span></div>
+            Qui sommes-nous ?
+          </router-link>
+          
+          <router-link to="/projets" class="mobile-link" @click="closeMenus">
+            <div class="link-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+            Projets
+          </router-link>
+        </div>
+
+        <div class="mobile-cta-section">
+          <div class="cta-card">
+            <p>Prêt à transformer vos idées en réalité ?</p>
+            <router-link to="/contact" class="mobile-cta-btn" @click="closeMenus">
+              Discutons de votre projet
+              <span class="material-symbols-outlined">arrow_forward</span>
             </router-link>
           </div>
         </div>
-        
-        <router-link to="/a-propos" class="mobile-link" @click="closeMenus">
-          <span class="material-symbols-outlined">info</span>
-          À propos
-        </router-link>
-        <router-link to="/projets" class="mobile-link" @click="closeMenus">
-          <span class="material-symbols-outlined">folder_open</span>
-          Projets
-        </router-link>
-        <router-link to="/carrieres" class="mobile-link" @click="closeMenus">
-          <span class="material-symbols-outlined">work</span>
-          Carrières
-        </router-link>
-      </div>
-      
-      <div class="mobile-nav-footer">
-        <router-link to="/contact" class="mobile-link" @click="closeMenus">
-          <span class="material-symbols-outlined">mail</span>
-          Contact
-        </router-link>
       </div>
     </nav>
 
     <!-- Desktop Navbar -->
-    <header class="navbar" :class="{ 'navbar-scrolled': isScrolled }">
+    <header class="navbar" :class="{ 'navbar-scrolled': isScrolled, 'navbar-home-v2': isHome && !isScrolled }">
       <div class="navbar-container">
         <router-link to="/" class="navbar-logo">
           <img src="/assets/images/logo.png" alt="TechRoot Group">
@@ -154,6 +142,11 @@ export default {
       dropdownOpen: false
     }
   },
+  computed: {
+    isHome() {
+      return this.$route.path === '/'
+    }
+  },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
   },
@@ -225,7 +218,7 @@ export default {
 .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: #1e293b;
   font-family: 'Space Grotesk', sans-serif;
 }
 
@@ -242,9 +235,9 @@ export default {
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.9);
+  color: #1e293b;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.3s ease;
   display: flex;
@@ -365,6 +358,24 @@ export default {
   font-size: 1.25rem;
 }
 
+.navbar-home-v2:not(.navbar-scrolled) .nav-link {
+  color: #1e293b;
+}
+
+.navbar-home-v2:not(.navbar-scrolled) .nav-link:hover,
+.navbar-home-v2:not(.navbar-scrolled) .nav-link.router-link-active {
+  color: #0d9668;
+}
+
+.navbar-home-v2:not(.navbar-scrolled) .mobile-toggle {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.navbar-home-v2:not(.navbar-scrolled) .mobile-toggle span {
+  background: #1e293b;
+}
+
 .mobile-toggle {
   display: none;
   flex-direction: column;
@@ -383,10 +394,10 @@ export default {
 }
 
 .mobile-toggle span {
-  width: 22px;
-  height: 2.5px;
-  background: #ffffff;
-  border-radius: 2px;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #111827;
   transition: all 0.3s ease;
 }
 
@@ -435,22 +446,21 @@ export default {
   visibility: visible;
 }
 
-/* Mobile Sidebar */
+/* Mobile Sidebar Redesign */
 .mobile-sidebar {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 280px;
-  max-width: 85vw;
+  width: 320px;
+  max-width: 90vw;
   background: #ffffff;
   display: flex;
   flex-direction: column;
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 99999;
-  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
-  overflow-y: auto;
+  box-shadow: 20px 0 50px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-open {
@@ -461,123 +471,160 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
 }
 
 .mobile-logo img {
-  height: 28px;
-  width: auto;
+  height: 32px;
+}
+
+.mobile-logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 .mobile-close {
-  background: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 8px;
-  color: #64748b;
-  transition: all 0.2s;
-}
-
-.mobile-close:hover {
   background: #f1f5f9;
-  color: #1e293b;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.mobile-close .material-symbols-outlined {
-  font-size: 1.5rem;
+.mobile-nav-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 1.5rem 0;
 }
 
 .mobile-nav-links {
   flex: 1;
-  padding: 0.5rem 0;
+  padding: 0 1rem;
 }
 
 .mobile-link {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.875rem 1.25rem;
-  color: #374151;
+  gap: 1rem;
+  padding: 1rem;
+  border: none;
+  background: none;
+  color: #334155;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s;
+  text-align: left;
 }
 
-.mobile-link .material-symbols-outlined {
-  font-size: 1.25rem;
-  color: #6b7280;
+.mobile-link:active, .mobile-link.router-link-active {
+  background: #f0fdf4;
+  color: #059669;
 }
 
-.mobile-link:hover {
-  background: #f3f4f6;
+.link-icon {
+  width: 40px;
+  height: 40px;
+  background: #f8fafc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
 }
 
-.mobile-link.router-link-active,
-.mobile-link.router-link-exact-active {
-  background: rgba(13, 150, 104, 0.1);
-  color: #0d9668;
-  border-left: 3px solid #0d9668;
+.mobile-link:active .link-icon, .mobile-link.router-link-active .link-icon {
+  background: #059669;
+  color: white;
 }
 
-.mobile-link.router-link-active .material-symbols-outlined,
-.mobile-link.router-link-exact-active .material-symbols-outlined {
-  color: #0d9668;
-}
-
-.mobile-link .dropdown-arrow {
+.mobile-link .arrow {
   margin-left: auto;
-  transition: transform 0.2s ease;
+  font-size: 1.25rem;
+  transition: transform 0.3s;
 }
 
-.arrow-open {
+.mobile-link .rotate {
   transform: rotate(180deg);
 }
 
-.mobile-dropdown-menu {
+.mobile-sub-menu {
   max-height: 0;
   overflow: hidden;
-  background: #f8fafc;
-  transition: max-height 0.3s ease;
+  transition: all 0.3s ease-out;
+  padding-left: 3.5rem;
 }
 
-.mobile-dropdown-menu.dropdown-open {
-  max-height: 400px;
+.mobile-sub-menu.show {
+  max-height: 300px;
+  margin-bottom: 1rem;
 }
 
-.mobile-dropdown-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1.25rem 0.75rem 3rem;
-  color: #374151;
+.sub-link {
+  display: block;
+  padding: 0.75rem 0;
+  color: #64748b;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
-.mobile-dropdown-item .material-symbols-outlined {
-  font-size: 1.1rem;
-  color: #6b7280;
+.sub-link.router-link-active {
+  color: #059669;
+  font-weight: 600;
 }
 
-.mobile-dropdown-item:hover {
-  background: #f1f5f9;
+.mobile-cta-section {
+  padding: 1.5rem;
+  margin-top: auto;
 }
 
-.mobile-dropdown-item.router-link-active {
-  color: #0d9668;
-  background: rgba(13, 150, 104, 0.08);
+.cta-card {
+  background: #0f172a;
+  padding: 1.5rem;
+  border-radius: 20px;
+  color: white;
 }
 
-.mobile-dropdown-item.router-link-active .material-symbols-outlined {
-  color: #0d9668;
+.cta-card p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
-.mobile-nav-footer {
-  border-top: 1px solid #e2e8f0;
-  padding: 0.5rem 0;
+.mobile-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #059669;
+  color: white;
+  text-decoration: none;
+  padding: 0.875rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 1024px) {

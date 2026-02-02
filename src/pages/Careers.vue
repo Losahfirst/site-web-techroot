@@ -1,18 +1,37 @@
 <template>
   <div class="careers-page">
     <!-- Hero Section -->
-    <section class="page-hero">
-      <div class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" alt="Carrières TechRoot" />
-        <div class="hero-overlay"></div>
+    <!-- Hero Section -->
+    <section class="hero-v2 internal-hero">
+      <div class="hero-bg-shapes">
+        <div class="hero-grid-pattern"></div>
+        <div class="africa-silhouette-v2"></div>
+        <div class="orange-dot-focus"></div>
+        <div class="dot-green"></div>
+        <div class="dot-blue"></div>
       </div>
-      <div class="hero-content">
-        <span class="hero-badge">
-          <span class="material-symbols-outlined">work</span>
-          Carrières
-        </span>
-        <h1>Rejoignez l'Aventure <span class="gradient-text">TechRoot</span></h1>
-        <p>Construisez votre carrière au sein d'une équipe passionnée et innovante. Ensemble, façonnons l'avenir technologique de l'Afrique.</p>
+      
+      <div class="container hero-container">
+        <div class="hero-content-v2">
+          <div class="internal-badge">CARRIÈRES & TALENTS</div>
+          <h1>
+            Bâtir l'avenir <span class="serif-text">ensemble</span> <br/>
+            & <span class="highlight">innover en Afrique</span>
+          </h1>
+          <p class="hero-lead">
+            Rejoignez une équipe de passionnés et contribuez à des projets technologiques qui transforment durablement notre continent.
+          </p>
+          <div class="hero-actions-v2">
+            <a href="#form" class="btn-primary-v2">
+              Postuler Maintenant
+              <span class="material-symbols-outlined">south</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image-v2">
+          <div class="image-continuous image-careers"></div>
+        </div>
       </div>
     </section>
 
@@ -330,79 +349,168 @@ const benefits = ref([
 </script>
 
 <style scoped>
-/* Page Hero */
-.page-hero {
+/* New Hero Styles (Shared) */
+.hero-v2 {
   position: relative;
-  min-height: 55vh;
+  min-height: 80vh;
+  background-color: #f0f7f4;
+  padding-top: 120px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
-.hero-bg {
+.internal-hero {
+  min-height: 70vh;
+  padding-bottom: 60px;
+}
+
+.hero-bg-shapes {
   position: absolute;
   inset: 0;
+  pointer-events: none;
 }
 
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
+.hero-grid-pattern {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(5, 30, 25, 0.97) 0%, rgba(8, 20, 35, 0.95) 100%);
+  background-image: radial-gradient(#064e3b 1.5px, transparent 1.5px);
+  background-size: 60px 60px;
+  opacity: 0.05;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 800px;
-  padding: 2rem;
+.africa-silhouette-v2 {
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  width: 90%;
+  height: 90%;
+  background-image: url('https://africadigitalalliance.com/wp-content/uploads/2023/04/Africa-Map-Big@3x.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  filter: sepia(1) saturate(0.5) brightness(1.2);
+  pointer-events: none;
 }
 
-.hero-badge {
-  display: inline-flex;
+.orange-dot-focus {
+  position: absolute;
+  top: 25%;
+  left: 3%;
+  width: 20px;
+  height: 20px;
+  background: #f97316;
+  border-radius: 50%;
+}
+
+.dot-green, .dot-blue {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-green { top: 30%; right: 40%; background: #10b981; }
+.dot-blue { bottom: 35%; left: 45%; background: #0891b2; }
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 0.5rem 1.25rem;
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #4ade80;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.internal-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #059669;
   margin-bottom: 1.5rem;
 }
 
-.hero-badge .material-symbols-outlined {
-  font-size: 1.125rem;
-}
-
-.hero-content h1 {
+.hero-v2 h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.serif-text {
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  font-style: italic;
+  color: #064e3b;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #10b981, #06b6d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.highlight {
+  color: #10b981;
 }
 
-.hero-content p {
-  font-size: 1.125rem;
-  color: #94a3b8;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.7;
+.hero-lead {
+  font-size: 1.2rem;
+  color: #374151;
+  line-height: 1.5;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-image-v2 {
+  position: relative;
+  height: 500px;
+  width: 100%;
+}
+
+.image-continuous {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg transform='rotate(-25 300 300)'%3E%3Crect x='30' y='50' width='100' height='500' rx='50' fill='black' /%3E%3Crect x='175' y='20' width='100' height='560' rx='50' fill='black' /%3E%3Crect x='320' y='80' width='100' height='520' rx='50' fill='black' /%3E%3Crect x='465' y='180' width='100' height='380' rx='50' fill='black' /%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg transform='rotate(-25 300 300)'%3E%3Crect x='30' y='50' width='100' height='500' rx='50' fill='black' /%3E%3Crect x='175' y='20' width='100' height='560' rx='50' fill='black' /%3E%3Crect x='320' y='80' width='100' height='520' rx='50' fill='black' /%3E%3Crect x='465' y='180' width='100' height='380' rx='50' fill='black' /%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.image-careers {
+  background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1280&q=80');
+}
+
+.btn-primary-v2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: #111827;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.btn-primary-v2:hover {
+  background: #059669;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-lead { margin-inline: auto; }
+  .hero-actions-v2 { justify-content: center; }
+  .hero-image-v2 { height: 400px; }
+}
+
+@media (max-width: 768px) {
+  .hero-v2 { padding-top: 100px; }
+  .hero-image-v2 { height: 320px; }
 }
 
 /* Section Styles */
