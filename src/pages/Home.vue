@@ -637,12 +637,12 @@ const closeModal = () => {
 }
 
 .hero-lead {
-  font-size: 1.35rem;
-  color: #374151; /* Slate grey for readability */
-  line-height: 1.4;
-  max-width: 500px;
-  margin-bottom: 2rem; /* Reduced for stats */
-  font-weight: 500;
+  font-size: 1.25rem;
+  color: #4b5563; /* Slightly lighter for less visual weight */
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
 }
 
 .hero-stats-compact {
