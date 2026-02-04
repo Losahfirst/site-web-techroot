@@ -4,7 +4,7 @@
     <nav class="mobile-menu" :class="{ 'menu-open': mobileMenuOpen }">
       <div class="mobile-menu-header">
         <router-link to="/" class="navbar-logo" @click="closeMenus">
-          <img src="/assets/images/logo.png" alt="TechRoot Group">
+          <img src="/images/logo.png" alt="TechRoot Group">
         </router-link>
         <button class="mobile-close-btn" @click="closeMenus">
           <span class="material-symbols-outlined">close</span>
@@ -63,7 +63,7 @@
     <header class="navbar" :class="{ 'navbar-scrolled': isScrolled, 'navbar-home-v2': isHome && !isScrolled }">
       <div class="navbar-container">
         <router-link to="/" class="navbar-logo">
-          <img src="/assets/images/logo.png" alt="TechRoot Group">
+          <img src="/images/logo.png" alt="TechRoot Group">
         </router-link>
 
         <nav class="navbar-nav">
