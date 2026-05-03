@@ -244,9 +244,10 @@ section { padding: 100px 0; }
   max-width: 500px;
   aspect-ratio: 1;
   background-image: url('https://img.freepik.com/vecteurs-premium/ingenieur-multimetre-verifie-carte-mere_169241-818.jpg?semt=ais_hybrid&w=740&q=80');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 24px; /* Subtle rounding for the image itself */
 }
 
 /* Filters */

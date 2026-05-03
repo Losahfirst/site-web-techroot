@@ -17,9 +17,7 @@
           </div>
         </div>
         <div class="hero-image-wrapper">
-          <div class="circular-mask">
-            <div class="mask-image about-hero-img"></div>
-          </div>
+          <div class="about-hero-img"></div>
         </div>
       </div>
     </section>
@@ -186,18 +184,21 @@ section { padding: 100px 0; }
 
 .hero-image-wrapper { display: flex; justify-content: flex-end; }
 
-.circular-mask {
-  width: 400px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
+.about-hero-img {
+  width: 500px;
+  height: 500px;
+  background-image: url('https://thumbs.dreamstime.com/b/construction-pc-avec-mat%C3%A9riel-%C3%A9lectronique-pi%C3%A8ces-et-composants-conception-bo%C3%AEtier-de-carte-m%C3%A8re-la-m%C3%A9moire-ram-l-ordinateur-260201391.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
 }
 
-.about-hero-img {
-  width: 100%;
-  height: 100%;
-  background-image: url('https://img.freepik.com/photos-gratuite/personnes-au-bureau-pendant-journee-travail_23-2150690154.jpg?semt=ais_hybrid&w=800&q=80');
-  background-size: cover;
+@media (max-width: 768px) {
+  .about-hero-img {
+    width: 100%;
+    height: 300px;
+  }
 }
 
 /* Story */
