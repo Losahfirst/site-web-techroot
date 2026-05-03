@@ -173,19 +173,19 @@ const poles = ref([
   {
     title: 'Pôle Hardware',
     description: 'Conception électronique, IoT et systèmes embarqués.',
-    image: 'https://afriqueitnews.com/wp-content/uploads/telecommunications-1024x683.jpg',
+    image: 'https://img.freepik.com/vecteurs-premium/carte-mere-disque-dur-processeur-ventilateur-carte-graphique-memoire-tournevis-etui-ensemble-materiel-informatique-personnel-icones-composants-pc_169241-2200.jpg?semt=ais_hybrid&w=740&q=80',
     link: '/poles/hardware'
   },
   {
     title: 'Pôle Software',
     description: 'Développement d\'applications web et mobiles sur-mesure.',
-    image: 'https://localhost-digital.com/wp-content/uploads/2020/11/hike-hardware-1.png',
+    image: 'https://img.freepik.com/vecteurs-premium/outils-essentiels-pour-professionnels-creatifs-kit-conception-complet-pour-flux-travail-modernes_1300528-18276.jpg',
     link: '/poles/software'
   },
   {
     title: 'Pôle Drones',
     description: 'Solutions aériennes, cartographie et inspection industrielle.',
-    image: 'https://prod.cdn-medias.jeuneafrique.com/cdn-cgi/image/q=auto,f=auto,metadata=none,width=1280,height=720,fit=cover/https://prod.cdn-medias.jeuneafrique.com/medias/2021/01/05/jad20210105-eco-securite-drone.jpg',
+    image: 'https://us.123rf.com/450wm/anatolir/anatolir1808/anatolir180800116/112307458-contr%C3%B4lez-le-drone-sur-l-arri%C3%A8re-plan-du-pad-illustration-plate-du-drone-de-contr%C3%B4le-sur-fond-de.jpg?ver=6',
     link: '/poles/drones'
   }
 ])
