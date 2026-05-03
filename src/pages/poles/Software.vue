@@ -1,46 +1,30 @@
 <template>
-  <div class="pole-page">
-    <!-- Hero Section -->
-    <!-- Hero Section -->
-    <section class="hero-v2 internal-hero">
-      <div class="hero-bg-shapes">
-        <div class="hero-grid-pattern"></div>
-        <div class="africa-silhouette-v2"></div>
-        <div class="orange-dot-focus"></div>
-        <div class="dot-green"></div>
-        <div class="dot-blue"></div>
-      </div>
-      
-      <div class="container hero-container">
-        <div class="hero-content-v2">
-          <div class="internal-badge">PÔLE SOFTWARE</div>
-          <h1>
-            Développement <br/>
-            & <span class="highlight">solutions intelligentes</span>
-          </h1>
+  <div class="pole-page-modern">
+    <!-- Minimalist Split Hero Section -->
+    <section class="hero-modern-split">
+      <div class="container hero-split-container">
+        <div class="hero-content">
+          <div class="hero-badge">PÔLE SOFTWARE</div>
+          <h1>Développement & <br/> <span class="primary-text">solutions intelligentes</span></h1>
           <p class="hero-lead">
             Applications sur-mesure, plateformes cloud et solutions digitales innovantes conçues pour la performance et l'évolutivité.
           </p>
-          <div class="hero-actions-v2">
-            <a href="#services" class="btn-primary-v2">
-              Nos Expertise
-              <span class="material-symbols-outlined">south</span>
-            </a>
-          </div>
+          <a href="#services" class="cta-modern">
+            Découvrir nos services
+            <span class="material-symbols-outlined">arrow_downward</span>
+          </a>
         </div>
-
-        <div class="hero-image-v2">
-          <div class="image-continuous image-software"></div>
+        <div class="hero-image-right">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="Software Development" />
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services-section">
+    <section id="services" class="services-modern">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Nos Services</span>
-          <h2>Solutions <span class="gradient-text">Logicielles</span> Complètes</h2>
+          <h2>Solutions Logicielles <span class="primary-text">Complètes</span></h2>
           <p>De la conception à la maintenance, nous développons des solutions adaptées à vos besoins.</p>
         </div>
         <div class="services-grid">
@@ -52,7 +36,7 @@
             <p>{{ service.description }}</p>
             <ul class="service-features">
               <li v-for="feature in service.features" :key="feature">
-                <span class="material-symbols-outlined">check_circle</span>
+                <span class="material-symbols-outlined">check</span>
                 {{ feature }}
               </li>
             </ul>
@@ -62,11 +46,10 @@
     </section>
 
     <!-- Tech Stack Section -->
-    <section class="tech-section">
+    <section class="tech-modern">
       <div class="container">
         <div class="section-header center">
-          <span class="section-badge">Technologies</span>
-          <h2>Notre Stack <span class="gradient-text">Technique</span></h2>
+          <h2>Notre Stack <span class="primary-text">Technique</span></h2>
           <p>Les technologies les plus modernes pour des solutions performantes.</p>
         </div>
         <div class="tech-grid">
@@ -84,11 +67,10 @@
     </section>
 
     <!-- Process Section -->
-    <section class="process-section">
+    <section class="process-modern">
       <div class="container">
         <div class="section-header center">
-          <span class="section-badge">Notre Méthode</span>
-          <h2>Processus de <span class="gradient-text">Développement</span></h2>
+          <h2>Processus de <span class="primary-text">Développement</span></h2>
         </div>
         <div class="process-grid">
           <div class="process-card" v-for="(step, index) in process" :key="index">
@@ -96,24 +78,6 @@
             <h3>{{ step.title }}</h3>
             <p>{{ step.description }}</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="cta-bg">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80" alt="Technology" />
-        <div class="cta-overlay"></div>
-      </div>
-      <div class="container">
-        <div class="cta-content">
-          <h2>Prêt à <span class="gradient-text">Développer</span> Votre Solution ?</h2>
-          <p>Discutons de votre projet et créons ensemble la solution parfaite.</p>
-          <router-link to="/contact" class="btn btn-primary btn-large">
-            <span class="material-symbols-outlined">arrow_forward</span>
-            Démarrer un Projet
-          </router-link>
         </div>
       </div>
     </section>
@@ -200,70 +164,19 @@ const process = ref([
 </script>
 
 <style scoped>
-/* New Hero Styles (Shared) */
-.hero-v2 {
+/* Hero Section Split Layout */
+.hero-modern-split {
   position: relative;
-  min-height: 80vh;
-  background-color: #f0f7f4;
-  padding-top: 120px;
+  min-height: 70vh;
+  background-color: var(--waymo-dark);
+  padding-top: 100px;
   display: flex;
   align-items: center;
+  color: white;
   overflow: hidden;
 }
 
-.internal-hero {
-  min-height: 70vh;
-  padding-bottom: 60px;
-}
-
-.hero-bg-shapes {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero-grid-pattern {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(#064e3b 1.5px, transparent 1.5px);
-  background-size: 60px 60px;
-  opacity: 0.05;
-}
-
-.africa-silhouette-v2 {
-  position: absolute;
-  top: 10%;
-  left: -5%;
-  width: 90%;
-  height: 90%;
-  background-image: url('https://africadigitalalliance.com/wp-content/uploads/2023/04/Africa-Map-Big@3x.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.05;
-  filter: sepia(1) saturate(0.5) brightness(1.2);
-  pointer-events: none;
-}
-
-.orange-dot-focus {
-  position: absolute;
-  top: 25%;
-  left: 3%;
-  width: 20px;
-  height: 20px;
-  background: #f97316;
-  border-radius: 50%;
-}
-
-.dot-green, .dot-blue {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-.dot-green { top: 30%; right: 40%; background: #10b981; }
-.dot-blue { bottom: 35%; left: 45%; background: #0891b2; }
-
-.hero-container {
+.hero-split-container {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   align-items: center;
@@ -272,53 +185,16 @@ const process = ref([
   z-index: 2;
 }
 
-.internal-badge {
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  color: #059669;
-  margin-bottom: 1.5rem;
-}
-
-.hero-v2 h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2.25rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1;
-  color: #111827;
-  margin-bottom: 1.5rem;
-}
-
-.serif-text {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-style: italic;
-  color: #064e3b;
-}
-
-.highlight {
-  color: #10b981;
-}
-
-.hero-lead {
-  font-size: 1.2rem;
-  color: #374151;
-  line-height: 1.5;
-  max-width: 520px;
-  margin-bottom: 2.5rem;
-}
-
-.hero-image-v2 {
+.hero-image-right {
   position: relative;
   height: 500px;
   width: 100%;
 }
 
-.image-continuous {
+.hero-image-right img {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg transform='rotate(-25 300 300)'%3E%3Crect x='30' y='50' width='100' height='500' rx='50' fill='black' /%3E%3Crect x='175' y='20' width='100' height='560' rx='50' fill='black' /%3E%3Crect x='320' y='80' width='100' height='520' rx='50' fill='black' /%3E%3Crect x='465' y='180' width='100' height='380' rx='50' fill='black' /%3E%3C/g%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg transform='rotate(-25 300 300)'%3E%3Crect x='30' y='50' width='100' height='500' rx='50' fill='black' /%3E%3Crect x='175' y='20' width='100' height='560' rx='50' fill='black' /%3E%3Crect x='320' y='80' width='100' height='520' rx='50' fill='black' /%3E%3Crect x='465' y='180' width='100' height='380' rx='50' fill='black' /%3E%3C/g%3E%3C/svg%3E");
   -webkit-mask-size: contain;
@@ -327,47 +203,70 @@ const process = ref([
   mask-position: center;
 }
 
-.image-software {
-  background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1280&q=80');
-}
-
-.btn-primary-v2 {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  background: #111827;
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 100px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.3s;
-}
-
-.btn-primary-v2:hover {
-  background: #059669;
-  transform: translateY(-3px);
-}
-
 @media (max-width: 1024px) {
-  .hero-container {
+  .hero-split-container {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .hero-image-v2 { 
-    height: 400px; 
+  .hero-image-right {
+    height: 350px;
     order: -1;
   }
-  .hero-lead { margin-inline: auto; }
-  .hero-actions-v2 { justify-content: center; }
+  .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-@media (max-width: 768px) {
-  .hero-v2 { padding-top: 100px; }
-  .hero-image-v2 { height: 320px; }
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
 }
 
-/* Common */
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.primary-text {
+  color: var(--waymo-blue);
+}
+
+.hero-lead {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.cta-modern {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--waymo-blue);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-modern:hover {
+  background: #0a7350;
+}
+
+/* Sections Common */
 section {
   padding: 5rem 0;
 }
@@ -378,96 +277,77 @@ section {
   padding: 0 1.5rem;
 }
 
-.section-badge {
-  display: inline-block;
-  background: rgba(13, 150, 104, 0.1);
-  color: #0d9668;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
 .section-header {
   margin-bottom: 3rem;
+  max-width: 700px;
 }
 
 .section-header.center {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-header h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  font-weight: 700;
-  color: #1e293b;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--waymo-text-dark);
   margin-bottom: 1rem;
 }
 
 .section-header p {
-  font-size: 1.125rem;
   color: #64748b;
-  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-.section-header.center p {
-  margin: 0 auto;
-}
-
-/* Services Section */
-.services-section {
-  background: #f8fafc;
+/* Services Grid */
+.services-modern {
+  background: var(--waymo-light);
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
 .service-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 2rem;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  border: 1px solid #f1f5f9;
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  border-color: #0d9668;
+  transform: translateY(-5px);
 }
 
 .service-icon {
-  width: 60px;
-  height: 60px;
-  background: #0d9668;
-  border-radius: 16px;
+  width: 50px;
+  height: 50px;
+  background: rgba(13, 150, 104, 0.1);
+  color: var(--waymo-blue);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
 }
 
-.service-icon .material-symbols-outlined {
-  font-size: 1.75rem;
-  color: white;
-}
-
 .service-card h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--waymo-text-dark);
 }
 
-.service-card > p {
+.service-card p {
   color: #64748b;
-  line-height: 1.7;
   margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 .service-features {
@@ -478,115 +358,108 @@ section {
 .service-features li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #64748b;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
+  gap: 8px;
+  color: #475569;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
 .service-features .material-symbols-outlined {
-  font-size: 1rem;
-  color: #22c55e;
+  font-size: 16px;
+  color: var(--waymo-blue);
 }
 
 /* Tech Section */
-.tech-section {
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+.tech-modern {
+  background: white;
 }
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
 }
 
 .tech-category h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #0d9668;
+  font-family: var(--font-heading);
+  color: var(--waymo-text-dark);
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 10px;
   margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 .tech-items {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 12px;
 }
 
 .tech-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  gap: 15px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
 .tech-item:hover {
-  border-color: #0d9668;
-  transform: translateX(5px);
+  background: #e2e8f0;
 }
 
 .tech-logo {
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
-  filter: brightness(1.1);
 }
 
 .tech-name {
-  color: #1e293b;
-  font-size: 0.9375rem;
   font-weight: 500;
+  color: #334155;
 }
 
 /* Process Section */
-.process-section {
-  background: #ffffff;
+.process-modern {
+  background: var(--waymo-light);
 }
 
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
 .process-card {
+  background: white;
   padding: 2rem;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-}
-
-.process-card:hover {
-  transform: translateY(-5px);
-  border-color: #0d9668;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
 }
 
 .process-number {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: #0d9668;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 0;
+}
+
+.process-card h3, .process-card p {
+  position: relative;
+  z-index: 1;
 }
 
 .process-card h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 0.75rem;
+  margin-bottom: 10px;
+  color: var(--waymo-text-dark);
 }
 
 .process-card p {
@@ -594,218 +467,73 @@ section {
   line-height: 1.6;
 }
 
-/* CTA Section */
-.cta-section {
-  position: relative;
-  padding: 8rem 0;
-  overflow: hidden;
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero-modern {
+    padding-top: 80px;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .section-header h2 {
+    font-size: 2rem;
+  }
 }
 
-.cta-bg {
-  position: absolute;
-  inset: 0;
+/* Additional Grids and Cards Fixes */
+.sectors-grid, .showcase-grid, .process-timeline, .tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.cta-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.sector-card, .showcase-card, .process-step, .tool-card, .feature-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  border: 1px solid #f1f5f9;
+  transition: transform 0.3s ease;
 }
 
-.cta-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.9) 0%, rgba(6, 182, 212, 0.85) 100%);
+.sector-card:hover, .process-step:hover, .feature-item:hover {
+  transform: translateY(-5px);
 }
 
-.cta-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cta-content h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  font-weight: 700;
-  color: white;
+.sector-card .material-symbols-outlined, .feature-icon .material-symbols-outlined {
+  font-size: 2.5rem;
+  color: var(--waymo-blue);
   margin-bottom: 1rem;
 }
 
-.cta-content .gradient-text {
-  background: linear-gradient(135deg, #ffffff, #d1fae5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.sector-card h3, .process-step h4, .feature-text h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--waymo-text-dark);
 }
 
-.cta-content p {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
+.sector-card p, .process-step p, .feature-text p {
+  color: #64748b;
+  line-height: 1.6;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.showcase-images img, .features-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.btn-primary {
-  background: #f8fafc;
-  color: #0d9668;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.stats-row {
+  display: flex; gap: 2rem; margin-top: 2rem;
 }
+.stat-item {
+  display: flex; flex-direction: column;
+}
+.stat-number { font-size: 2rem; font-weight: bold; color: var(--waymo-blue); }
+.stat-label { color: #64748b; }
+.step-number { font-size: 3rem; font-weight: bold; color: var(--waymo-blue); opacity: 0.2; margin-bottom: -1rem; }
 
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.btn-large {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  section {
-    padding: 4rem 0;
-  }
-  
-  .tech-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 3rem 0;
-  }
-  
-  .container {
-    padding: 0 1rem;
-  }
-  
-  .page-hero {
-    min-height: 50vh;
-  }
-  
-  .hero-content {
-    padding: 1.5rem;
-  }
-  
-  .hero-content h1 {
-    font-size: 1.75rem;
-  }
-  
-  .hero-content > p {
-    font-size: 1rem;
-  }
-  
-  .section-header h2 {
-    font-size: 1.5rem;
-  }
-  
-  .section-header p {
-    font-size: 1rem;
-  }
-  
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .service-card {
-    padding: 1.5rem;
-  }
-  
-  .service-icon {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .service-card h3 {
-    font-size: 1.125rem;
-  }
-  
-  .tech-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .tech-category h3 {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-  
-  .tech-item {
-    padding: 0.625rem 0.875rem;
-  }
-  
-  .tech-logo {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .tech-name {
-    font-size: 0.875rem;
-  }
-  
-  .process-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .process-card {
-    padding: 1.5rem;
-  }
-  
-  .process-number {
-    font-size: 2rem;
-  }
-  
-  .process-card h3 {
-    font-size: 1.125rem;
-  }
-  
-  .cta-content h2 {
-    font-size: 1.5rem;
-  }
-  
-  .cta-content p {
-    font-size: 1rem;
-  }
-  
-  .btn-large {
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .page-hero {
-    min-height: 40vh;
-  }
-  
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-  
-  .hero-badge {
-    font-size: 0.75rem;
-    padding: 0.4rem 1rem;
-  }
-}
+.internal-badge, .hero-badge { color: #10b981 !important; background: rgba(16, 185, 129, 0.15) !important; border: 1px solid rgba(16, 185, 129, 0.3) !important; }
 </style>

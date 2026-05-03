@@ -22,6 +22,18 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --waymo-dark: #0f172a;
+  --waymo-blue: #0d9668; /* Brand Green */
+  --waymo-light: #f8fafc;
+  --waymo-text-dark: #1e293b;
+  --waymo-text-light: #ffffff;
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,14 +41,15 @@ export default {
 }
 
 html, body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #1e293b;
+  color: var(--waymo-text-dark);
+  background-color: var(--waymo-light);
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 #app, #app-root {
@@ -53,7 +66,41 @@ html, body {
 
 main {
   flex: 1;
-  margin: 0;
-  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--waymo-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d1d6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a6;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
 }
 </style>
+
