@@ -471,15 +471,37 @@ section { padding: 5rem 0; }
   .hero-modern, .hero-v2 { padding-top: 80px; }
   .hero-content h1, .hero-content-v2 h1 { font-size: 2.2rem; }
   .section-header h2 { font-size: 2rem; }
-  .modal-content { grid-template-columns: 1fr; }
+  .modal-content, .hero-container { grid-template-columns: 1fr; }
   .modal-image { height: 200px; }
 }
 
 /* Overrides for Legacy Templates */
-.hero-v2, .internal-hero { min-height: 60vh; background-color: var(--waymo-dark); padding-top: 100px; }
-.hero-bg-shapes { display: none; }
-.hero-image-v2 { display: none; }
-.hero-container { grid-template-columns: 1fr; }
+.hero-v2, .internal-hero { min-height: 80vh; background-color: var(--waymo-dark); padding-top: 140px; display: flex; align-items: center; }
+.hero-bg-shapes { display: block; opacity: 0.3; }
+.hero-image-v2 { 
+  display: block; 
+  position: relative;
+  z-index: 2;
+}
+.hero-container { 
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; 
+  gap: 4rem;
+  align-items: center;
+}
+
+.image-continuous {
+  width: 100%;
+  aspect-ratio: 1;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+}
+
+.image-hardware {
+  background-image: url('https://img.freepik.com/vecteurs-premium/carte-mere-disque-dur-processeur-ventilateur-carte-graphique-memoire-tournevis-etui-ensemble-materiel-informatique-personnel-icones-composants-pc_169241-2200.jpg?semt=ais_hybrid&w=740&q=80');
+}
 .services-section, .features-section { background: var(--waymo-light); }
 .tech-section, .process-section { background: white; }
 .cta-section { display: none; }

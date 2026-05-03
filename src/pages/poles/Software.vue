@@ -15,7 +15,7 @@
           </a>
         </div>
         <div class="hero-image-right">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="Software Development" />
+          <img src="https://img.freepik.com/vecteurs-premium/outils-essentiels-pour-professionnels-creatifs-kit-conception-complet-pour-flux-travail-modernes_1300528-18276.jpg" alt="Software Development" />
         </div>
       </div>
     </section>
