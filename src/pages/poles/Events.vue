@@ -365,5 +365,5 @@ section { padding: 5rem 0; }
 .step-number { font-size: 3rem; font-weight: bold; color: var(--waymo-blue); opacity: 0.2; margin-bottom: -1rem; }
 
 
-.internal-badge, .hero-badge { color: #FF6B00 !important; background: rgba(255, 107, 0, 0.15) !important; border: 1px solid rgba(255, 107, 0, 0.3) !important; }
+
 </style>

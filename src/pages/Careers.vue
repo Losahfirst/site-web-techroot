@@ -17,9 +17,7 @@
           </div>
         </div>
         <div class="hero-image-wrapper">
-          <div class="circular-mask">
-            <div class="mask-image careers-hero-img"></div>
-          </div>
+          <div class="careers-hero-img"></div>
         </div>
       </div>
     </section>
@@ -220,20 +218,19 @@ section { padding: 100px 0; }
 
 .cta-circle-btn:hover { transform: scale(1.1); }
 
-.hero-image-wrapper { display: flex; justify-content: flex-end; }
-
-.circular-mask {
-  width: 400px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
+.hero-image-wrapper { 
+  display: flex; 
+  justify-content: flex-end;
 }
 
 .careers-hero-img {
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
   background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
 }
 
 /* Benefits */

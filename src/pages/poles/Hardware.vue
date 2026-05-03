@@ -13,7 +13,7 @@
       
       <div class="container hero-container">
         <div class="hero-content-v2">
-          <div class="internal-badge">PÔLE HARDWARE</div>
+          <div class="hero-badge">PÔLE HARDWARE</div>
           <h1>
             Systèmes <span class="serif-text">physiques</span> <br/>
             & <span class="highlight">électromécaniques</span>
@@ -29,8 +29,8 @@
           </div>
         </div>
 
-        <div class="hero-image-v2">
-          <div class="image-continuous image-hardware"></div>
+        <div class="hero-image-wrapper">
+          <div class="hardware-hero-img"></div>
         </div>
       </div>
     </section>
@@ -345,16 +345,7 @@ const closeModal = () => {
   z-index: 1;
 }
 
-.hero-badge, .internal-badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  margin-bottom: 1.5rem;
-}
+
 
 .hero-content h1, .hero-content-v2 h1 {
   font-family: var(--font-heading);
@@ -490,18 +481,84 @@ section { padding: 5rem 0; }
   align-items: center;
 }
 
-.image-continuous {
-  width: 100%;
-  aspect-ratio: 1;
-  background-size: contain;
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.blue-text { color: var(--waymo-blue); }
+
+.hero-badge {
+  display: inline-block;
+  color: var(--waymo-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.cta-circle-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--waymo-blue);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.3s;
+}
+
+.cta-circle-btn:hover { transform: scale(1.1); }
+
+.hero-image-wrapper { 
+  display: flex; 
+  justify-content: flex-end;
+}
+
+.hardware-hero-img {
+  width: 500px;
+  height: 500px;
+  background-image: url('https://img.freepik.com/vecteurs-premium/ingenieur-multimetre-verifie-carte-mere_169241-818.jpg?semt=ais_hybrid&w=740&q=80');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 24px;
 }
 
-.image-hardware {
-  background-image: url('https://img.freepik.com/vecteurs-premium/carte-mere-disque-dur-processeur-ventilateur-carte-graphique-memoire-tournevis-etui-ensemble-materiel-informatique-personnel-icones-composants-pc_169241-2200.jpg?semt=ais_hybrid&w=740&q=80');
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-image-wrapper {
+    justify-content: center;
+    margin-bottom: 2rem;
+    order: -1;
+  }
+  .hardware-hero-img {
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+  }
 }
+
 .services-section, .features-section { background: var(--waymo-light); }
 .tech-section, .process-section { background: white; }
 .cta-section { display: none; }
@@ -562,5 +619,5 @@ section { padding: 5rem 0; }
 .step-number { font-size: 3rem; font-weight: bold; color: var(--waymo-blue); opacity: 0.2; margin-bottom: -1rem; }
 
 
-.internal-badge, .hero-badge { color: #FF6B00 !important; background: rgba(255, 107, 0, 0.15) !important; border: 1px solid rgba(255, 107, 0, 0.3) !important; }
+
 </style>

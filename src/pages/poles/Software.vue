@@ -1,21 +1,23 @@
 <template>
   <div class="pole-page-modern">
     <!-- Minimalist Split Hero Section -->
-    <section class="hero-modern-split">
-      <div class="container hero-split-container">
+    <section class="hero-section">
+      <div class="container hero-container">
         <div class="hero-content">
           <div class="hero-badge">PÔLE SOFTWARE</div>
-          <h1>Développement & <br/> <span class="primary-text">solutions intelligentes</span></h1>
-          <p class="hero-lead">
+          <h1>Développement & <br/> <span class="blue-text">solutions intelligentes</span></h1>
+          <p class="hero-sub">
             Applications sur-mesure, plateformes cloud et solutions digitales innovantes conçues pour la performance et l'évolutivité.
           </p>
-          <a href="#services" class="cta-modern">
-            Découvrir nos services
-            <span class="material-symbols-outlined">arrow_downward</span>
-          </a>
+          <div class="hero-actions">
+            <a href="#services" class="cta-circle-btn">
+              <span>Services</span>
+              <span class="material-symbols-outlined">south</span>
+            </a>
+          </div>
         </div>
-        <div class="hero-image-right">
-          <img src="https://img.freepik.com/vecteurs-premium/outils-essentiels-pour-professionnels-creatifs-kit-conception-complet-pour-flux-travail-modernes_1300528-18276.jpg" alt="Software Development" />
+        <div class="hero-image-wrapper">
+          <div class="software-hero-img"></div>
         </div>
       </div>
     </section>
@@ -164,84 +166,43 @@ const process = ref([
 </script>
 
 <style scoped>
-/* Hero Section Split Layout */
-.hero-modern-split {
-  position: relative;
-  min-height: 70vh;
+/* Hero Section Standardized */
+.hero-section {
   background-color: var(--waymo-dark);
-  padding-top: 100px;
+  min-height: 70vh;
   display: flex;
   align-items: center;
-  color: white;
-  overflow: hidden;
+  padding-top: 140px;
 }
 
-.hero-split-container {
+.hero-container {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  align-items: center;
+  grid-template-columns: 1.5fr 1fr;
   gap: 4rem;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-image-right {
-  position: relative;
-  height: 500px;
-  width: 100%;
-}
-
-.hero-image-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg transform='rotate(-25 300 300)'%3E%3Crect x='30' y='50' width='100' height='500' rx='50' fill='black' /%3E%3Crect x='175' y='20' width='100' height='560' rx='50' fill='black' /%3E%3Crect x='320' y='80' width='100' height='520' rx='50' fill='black' /%3E%3Crect x='465' y='180' width='100' height='380' rx='50' fill='black' /%3E%3C/g%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg transform='rotate(-25 300 300)'%3E%3Crect x='30' y='50' width='100' height='500' rx='50' fill='black' /%3E%3Crect x='175' y='20' width='100' height='560' rx='50' fill='black' /%3E%3Crect x='320' y='80' width='100' height='520' rx='50' fill='black' /%3E%3Crect x='465' y='180' width='100' height='380' rx='50' fill='black' /%3E%3C/g%3E%3C/svg%3E");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-}
-
-@media (max-width: 1024px) {
-  .hero-split-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .hero-image-right {
-    height: 350px;
-    order: -1;
-  }
-  .hero-lead {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-
-.hero-badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  margin-bottom: 1.5rem;
+  align-items: center;
 }
 
 .hero-content h1 {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1.1;
+  color: white;
   margin-bottom: 1.5rem;
 }
 
-.primary-text {
+.blue-text { color: var(--waymo-blue); }
+
+.hero-badge {
+  display: inline-block;
   color: var(--waymo-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
 }
 
-.hero-lead {
+.hero-sub {
   font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.8);
   max-width: 600px;
@@ -249,17 +210,54 @@ const process = ref([
   line-height: 1.6;
 }
 
-.cta-modern {
+.cta-circle-btn {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   background: var(--waymo-blue);
   color: white;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
   text-decoration: none;
-  transition: background 0.3s ease;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.3s;
+}
+
+.cta-circle-btn:hover { transform: scale(1.1); }
+
+.hero-image-wrapper { 
+  display: flex; 
+  justify-content: flex-end;
+}
+
+.software-hero-img {
+  width: 500px;
+  height: 500px;
+  background-image: url('https://img.freepik.com/vecteurs-premium/outils-essentiels-pour-professionnels-creatifs-kit-conception-complet-pour-flux-travail-modernes_1300528-18276.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-image-wrapper {
+    justify-content: center;
+    margin-bottom: 2rem;
+    order: -1;
+  }
+  .software-hero-img {
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+  }
 }
 
 .cta-modern:hover {
@@ -535,5 +533,5 @@ section {
 .stat-label { color: #64748b; }
 .step-number { font-size: 3rem; font-weight: bold; color: var(--waymo-blue); opacity: 0.2; margin-bottom: -1rem; }
 
-.internal-badge, .hero-badge { color: #FF6B00 !important; background: rgba(255, 107, 0, 0.15) !important; border: 1px solid rgba(255, 107, 0, 0.3) !important; }
+
 </style>

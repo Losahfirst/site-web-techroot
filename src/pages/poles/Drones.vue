@@ -326,18 +326,29 @@ section { padding: 5rem 0; }
 }
 
 /* Overrides for Legacy Templates */
-.hero-v2, .internal-hero { min-height: 80vh; background-color: var(--waymo-dark); padding-top: 140px; display: flex; align-items: center; }
-.hero-bg-shapes { display: block; opacity: 0.3; }
-.hero-image-v2 { 
-  display: block; 
-  position: relative;
-  z-index: 2;
+/* Hero Section Overrides */
+.internal-hero { min-height: 70vh; padding-top: 100px; display: flex; align-items: center; }
+
+.hero-content-v2 { position: relative; z-index: 5; }
+.hero-content-v2 h1 { font-family: var(--font-heading); font-size: 4rem; color: #ffffff; line-height: 1.1; margin: 1.5rem 0; }
+.hero-content-v2 .highlight { color: var(--waymo-blue); }
+
+.internal-badge {
+  display: inline-block;
+  color: var(--waymo-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
 }
-.hero-container { 
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr; 
-  gap: 4rem;
-  align-items: center;
+
+.hero-image-v2 {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .image-continuous {
@@ -352,9 +363,13 @@ section { padding: 5rem 0; }
 .image-drones {
   background-image: url('https://us.123rf.com/450wm/anatolir/anatolir1808/anatolir180800116/112307458-contr%C3%B4lez-le-drone-sur-l-arri%C3%A8re-plan-du-pad-illustration-plate-du-drone-de-contr%C3%B4le-sur-fond-de.jpg?ver=6');
 }
-.services-section, .features-section { background: var(--waymo-light); }
-.tech-section, .process-section { background: white; }
-.cta-section { display: none; }
+
+@media (max-width: 1024px) {
+  .hero-container { grid-template-columns: 1fr; text-align: center; }
+  .hero-image-v2 { justify-content: center; margin-bottom: 2rem; order: -1; }
+  .hero-content-v2 h1 { font-size: 2.5rem; }
+}
+
 
 /* Additional Grids and Cards Fixes */
 .sectors-grid, .showcase-grid, .process-timeline, .tools-grid {
@@ -412,5 +427,5 @@ section { padding: 5rem 0; }
 .step-number { font-size: 3rem; font-weight: bold; color: var(--waymo-blue); opacity: 0.2; margin-bottom: -1rem; }
 
 
-.internal-badge, .hero-badge { color: #FF6B00 !important; background: rgba(255, 107, 0, 0.15) !important; border: 1px solid rgba(255, 107, 0, 0.3) !important; }
+
 </style>

@@ -182,7 +182,10 @@ section { padding: 100px 0; }
 
 .cta-circle-btn:hover { transform: scale(1.1); }
 
-.hero-image-wrapper { display: flex; justify-content: flex-end; }
+.hero-image-wrapper { 
+  display: flex; 
+  justify-content: flex-end;
+}
 
 .about-hero-img {
   width: 500px;
