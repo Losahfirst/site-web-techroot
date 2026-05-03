@@ -11,9 +11,7 @@
           </p>
         </div>
         <div class="hero-image-wrapper">
-          <div class="circular-mask">
-            <div class="mask-image projects-hero-img"></div>
-          </div>
+          <div class="projects-hero-img"></div>
         </div>
       </div>
     </section>
@@ -241,18 +239,14 @@ section { padding: 100px 0; }
   justify-content: flex-end;
 }
 
-.circular-mask {
-  width: 400px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
 .projects-hero-img {
   width: 100%;
-  height: 100%;
-  background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80');
-  background-size: cover;
+  max-width: 500px;
+  aspect-ratio: 1;
+  background-image: url('https://img.freepik.com/vecteurs-premium/ingenieur-multimetre-verifie-carte-mere_169241-818.jpg?semt=ais_hybrid&w=740&q=80');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Filters */

@@ -187,7 +187,7 @@ const sectors = ref([
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.6) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%);
 }
 
 .hero-container {
@@ -272,7 +272,7 @@ section { padding: 5rem 0; }
 .service-icon, .feature-icon {
   width: 50px;
   height: 50px;
-  background: rgba(13, 150, 104, 0.1);
+  background: rgba(255, 107, 0, 0.1);
   color: var(--waymo-blue);
   border-radius: 12px;
   display: flex;
@@ -312,7 +312,7 @@ section { padding: 5rem 0; }
 .modal-close { position: absolute; top: 20px; right: 20px; background: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 .modal-image img { width: 100%; height: 100%; object-fit: cover; }
 .modal-body { padding: 3rem; }
-.modal-icon { width: 60px; height: 60px; background: rgba(13, 150, 104, 0.1); color: var(--waymo-blue); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+.modal-icon { width: 60px; height: 60px; background: rgba(255, 107, 0, 0.1); color: var(--waymo-blue); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
 .modal-body h2 { font-family: var(--font-heading); font-size: 2rem; color: var(--waymo-text-dark); margin-bottom: 1rem; }
 .modal-description { color: #64748b; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; }
 
@@ -412,5 +412,5 @@ section { padding: 5rem 0; }
 .step-number { font-size: 3rem; font-weight: bold; color: var(--waymo-blue); opacity: 0.2; margin-bottom: -1rem; }
 
 
-.internal-badge, .hero-badge { color: #10b981 !important; background: rgba(16, 185, 129, 0.15) !important; border: 1px solid rgba(16, 185, 129, 0.3) !important; }
+.internal-badge, .hero-badge { color: #FF6B00 !important; background: rgba(255, 107, 0, 0.15) !important; border: 1px solid rgba(255, 107, 0, 0.3) !important; }
 </style>

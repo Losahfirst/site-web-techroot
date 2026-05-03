@@ -25,8 +25,8 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --waymo-dark: #0f172a;
-  --waymo-blue: #0d9668; /* Brand Green */
+  --waymo-dark: #000000;
+  --waymo-blue: #FF6B00; /* Brand Orange */
   --waymo-light: #f8fafc;
   --waymo-text-dark: #1e293b;
   --waymo-text-light: #ffffff;
