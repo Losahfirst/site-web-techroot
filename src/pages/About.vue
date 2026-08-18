@@ -102,12 +102,6 @@ const team = ref([
     linkedin: 'https://www.linkedin.com/in/yann-olivier-akansie-kouame'
   },
   { 
-    name: 'Yao Kouakou Wilfried', 
-    role: 'CTO - Directeur Software', 
-    image: '/images/team/cto.jpg',
-    linkedin: 'https://www.linkedin.com/in/kouakou-wilfried-jean-jores-yao-0503b593'
-  },
-  { 
     name: 'Kouassi Ange', 
     role: 'CFO', 
     image: '/images/team/cfo.jpg',
