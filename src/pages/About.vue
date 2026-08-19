@@ -78,12 +78,18 @@
         </div>
         <div class="team-waymo-grid">
           <div class="team-waymo-card" v-for="member in team" :key="member.name">
-            <div class="team-img-wrap">
-              <img :src="member.image" :alt="member.name">
-              <a :href="member.linkedin" class="linkedin-btn" target="_blank">Li</a>
+            <div class="team-avatar-wrap" :style="{ background: member.gradient }">
+              <div class="avatar-svg-container">
+                <svg viewBox="0 0 100 100" class="avatar-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="50" r="46" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="3 3" />
+                  <circle cx="50" cy="37" r="17" fill="rgba(255,255,255,0.92)" />
+                  <path d="M24 82 C24 65, 35 57, 50 57 C65 57, 76 65, 76 82" fill="rgba(255,255,255,0.92)" />
+                </svg>
+                <div class="avatar-initials-badge">{{ member.initials }}</div>
+              </div>
             </div>
             <h4>{{ member.name }}</h4>
-            <p>{{ member.role }}</p>
+            <p class="member-role">{{ member.role }}</p>
           </div>
         </div>
       </div>
@@ -96,22 +102,28 @@ import { ref } from 'vue'
 
 const team = ref([
   { 
-    name: 'Kouame Yann', 
-    role: 'CEO - Directeur Hardware', 
-    image: '/images/team/dg.jpg',
-    linkedin: 'https://www.linkedin.com/in/yann-olivier-akansie-kouame'
+    name: 'Mr Kouamé', 
+    role: 'Directeur Général', 
+    initials: 'MK',
+    gradient: 'linear-gradient(135deg, #FF6B00 0%, #FF8E3D 100%)'
   },
   { 
-    name: 'Kouassi Ange', 
-    role: 'CFO', 
-    image: '/images/team/cfo.jpg',
-    linkedin: 'https://www.linkedin.com/in/ange-wilfried-kouassi-1a8079150'
+    name: 'Mr Yao', 
+    role: 'Directeur des Opérations', 
+    initials: 'MY',
+    gradient: 'linear-gradient(135deg, #1E293B 0%, #475569 100%)'
   },
   { 
-    name: 'Tra bi Axel', 
-    role: 'COO - Directeur Drones', 
-    image: '/images/team/coo.jpg',
-    linkedin: 'https://www.linkedin.com/in/bi-nandi-pascal-axel-tra-b6ba84122'
+    name: 'Mr Kouassi', 
+    role: 'Directeur Financier', 
+    initials: 'MK',
+    gradient: 'linear-gradient(135deg, #0F766E 0%, #14B8A6 100%)'
+  },
+  { 
+    name: 'Mr Tra Bi', 
+    role: 'Directeur Technique', 
+    initials: 'MT',
+    gradient: 'linear-gradient(135deg, #2563EB 0%, #38BDF8 100%)'
   }
 ])
 </script>
@@ -219,21 +231,94 @@ section { padding: 100px 0; }
 
 /* Team */
 .team-section-waymo { background: var(--waymo-light); }
-.section-header-waymo { text-align: center; margin-bottom: 80px; }
+.section-header-waymo { text-align: center; margin-bottom: 70px; }
 .section-header-waymo h2 { font-size: 3rem; margin-bottom: 1rem; }
 
 .team-waymo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-.team-waymo-card { text-align: center; }
-.team-img-wrap { position: relative; border-radius: 32px; overflow: hidden; margin-bottom: 1.5rem; }
-.team-img-wrap img { width: 100%; aspect-ratio: 0.8; object-fit: cover; }
-.linkedin-btn { position: absolute; bottom: 1rem; right: 1rem; width: 44px; height: 44px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--waymo-blue); font-weight: 800; text-decoration: none; }
+.team-waymo-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.team-waymo-card h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-.team-waymo-card p { color: var(--waymo-blue); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+.team-waymo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(255, 107, 0, 0.25);
+}
+
+.team-avatar-wrap {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+}
+
+.avatar-svg-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-initials-badge {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background: var(--waymo-dark);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.team-waymo-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--waymo-dark);
+  font-weight: 700;
+}
+
+.member-role {
+  color: var(--waymo-blue);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
 
 @media (max-width: 1024px) {
-  .hero-container, .story-layout, .mission-grid, .team-waymo-grid { grid-template-columns: 1fr; }
-  .circular-mask { width: 300px; }
+  .hero-container, .story-layout, .mission-grid { grid-template-columns: 1fr; }
+  .team-waymo-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .mission-card-waymo { padding: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .team-waymo-grid { grid-template-columns: 1fr; }
 }
 </style>
