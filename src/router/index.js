@@ -14,6 +14,10 @@ import PoleDrones from '../pages/poles/Drones.vue'
 import PoleEvents from '../pages/poles/Events.vue'
 import PoleRecherche from '../pages/poles/Recherche.vue'
 
+// Legal
+import MentionsLegales from '../pages/MentionsLegales.vue'
+import Confidentialite from '../pages/Confidentialite.vue'
+
 const routes = [
     {
         path: '/',
@@ -44,6 +48,19 @@ const routes = [
         name: 'Careers',
         component: Careers,
         meta: { title: 'Carrières - TechRoot Group' }
+    },
+    {
+        path: '/mentions-legales',
+        name: 'MentionsLegales',
+        component: MentionsLegales,
+        meta: { title: 'Mentions Légales - TechRoot Group' }
+    },
+    {
+        path: '/politique-confidentialite',
+        alias: '/confidentialite',
+        name: 'Confidentialite',
+        component: Confidentialite,
+        meta: { title: 'Politique de Confidentialité - TechRoot Group' }
     },
     {
         path: '/poles/hardware',
